@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum TransactionTypes: string
+enum Categories: string
 {
     case Debit = 'Debit';
     case Credit = 'Credit';
