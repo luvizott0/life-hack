@@ -13,6 +13,6 @@ class Bank extends Model
     public $fillable = [
         'long_name',
         'short_name',
-        'compe'
+        'code'
     ];
 }

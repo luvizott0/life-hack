@@ -10,15 +10,16 @@ class RecurringTemplate extends Model
 {
     public $fillable = [
         'user_id',
-        'description',
+        'name',
         'amount',
         'category_id',
         'frequency',
-        'day_of_month'
+        'due_date'
     ];
 
     public $casts = [
-        'frequency' => FrequencyTypes::class
+        'frequency' => FrequencyTypes::class,
+        'due_date' => 'date'
     ];
 
     public function category(): BelongsTo

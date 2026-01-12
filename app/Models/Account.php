@@ -10,14 +10,19 @@ class Account extends Model
     public $fillable = [
         'user_id',
         'bank_id',
-        'type',
         'agency',
         'account',
+        'digit',
         'balance'
     ];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function bank(): BelongsTo
+    {
+        return $this->belongsTo(Bank::class);
     }
 }

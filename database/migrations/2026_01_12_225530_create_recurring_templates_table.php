@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('recurring_templates', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('category_id')->constrained('categories');
+            $table->string('name');
+            $table->decimal('amount', 10, 2);
+            $table->string('due_date');
             $table->timestamps();
         });
     }

@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('credit_cards', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('account_id')->constrained('accounts');
+            $table->string('name');
+            $table->decimal('limit', 10, 2);
+            $table->decimal('balance', 10, 2);
+            $table->string('closing_day');
+            $table->string('due_day');
             $table->timestamps();
         });
     }

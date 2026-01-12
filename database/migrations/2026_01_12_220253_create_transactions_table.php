@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('account_id')->constrained('accounts');
+            $table->foreignId('credit_card_id')->constrained('credit_cards');
+            $table->decimal('amount', 10, 2);
+            $table->string('description');
+            $table->string('type');
+            $table->string('status');
             $table->timestamps();
         });
     }

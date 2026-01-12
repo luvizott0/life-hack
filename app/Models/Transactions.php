@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-use App\Enums\Categories;
+use App\Enums\TransactionStatuses;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -18,6 +19,11 @@ class Transactions extends Model
         'account_id',
         'credit_card_id',
         'installment_id',
+    ];
+
+    public $casts = [
+        'date' => 'datetime',
+        'status' => TransactionStatuses::class
     ];
 
     public function category(): BelongsTo

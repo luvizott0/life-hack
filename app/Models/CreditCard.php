@@ -10,8 +10,14 @@ class CreditCard extends Model
         'user_id',
         'name',
         'limit',
+        'balance',
         'closing_day',
-        'due_day',
+        'due_date',
         'account_id'
+    ];
+
+    public $casts = [
+        'closing_day' => 'date',
+        'due_date' => 'date'
     ];
 }
